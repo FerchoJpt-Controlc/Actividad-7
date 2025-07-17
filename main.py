@@ -46,6 +46,25 @@ def BuscarEstudiante():
         print("\nEstudiante no encontrado.")
 
 
+def MostrarEstudiante():
+    if estudiantes<0:
+        print("\nNo hay estudiantes registrados")
+
+    else:
+        for carnet, datos in estudiantes.items():
+            print(f"\ncarnet: {carnet}")
+            print(f"nombre: {datos['nombre']}")
+            print(f"edad: {datos['edad']}")
+            print(f"carrera: {datos['carrera']}")
+            for cursos, notas in datos.items():
+                promedio=(notas["notaTarea"]+notas["notaParcial"]+notas["notaProyecto"])/3
+                print(f"\ncursos: {cursos}")
+                print(f"notas Tarea: {notas["notaTarea"]}")
+                print(f"notas Parcial: {notas["notaParcial"]}")
+                print(f"notas Proyecto: {notas["notaParcial"]}")
+                print(f"El promedio es: {promedio}")
+
+
 def Menu():
     while True:
         print("\nM E N U")
@@ -56,7 +75,8 @@ def Menu():
         opcion=int(input("\ningrese una opcion: "))
         if opcion==1:
             RegistrarEstudiante()
-       # elif opcion==2:
+        elif opcion==2:
+            MostrarEstudiante()
         elif opcion==3:
             BuscarEstudiante()
         elif opcion==4:
