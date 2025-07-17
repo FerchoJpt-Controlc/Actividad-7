@@ -12,7 +12,7 @@ def RegistrarEstudiante():
         cursos={}
         numCursos=int(input("ingrese cuantos cursos desea registrar: "))
         for i in range(numCursos):
-            nomCurso=input("ingrese nomcurso del curso: ")
+            nomCurso=input("ingrese la clave del curso: ")
             notaTarea=float(input("ingrese nota tarea: "))
             notaParcial=float(input("ingrese nota parcial: "))
             notaProyecto=float(input("ingrese nota proyecto: "))
@@ -30,4 +30,28 @@ def RegistrarEstudiante():
             "carrera":carrera,
             "cursos":cursos,
         }
+
+def MostrarEstudiantes():
+
+
+def Menu():
+    while True:
+        print("\nM E N U")
+        print("\n1. Registrar estudiante")
+        print("2. Mostrar estudiantes")
+        print("3. Buscar por carnet")
+        print("4. salir")
+        opcion=int(input("ingrese una opcion: "))
+        if opcion==1:
+            RegistrarEstudiante()
+       # elif opcion==2:
+       # elif opcion==3:
+        elif opcion==4:
+            print("gracias por usaar el sistemka ")
+            break
+        else:
+            print("opcion no valida")
+
+Menu()
+
 
